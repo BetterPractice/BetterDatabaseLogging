@@ -44,6 +44,7 @@ public struct DatabaseLogger: Logger {
         }
 
         let record = LogRecord(
+            id: UUID().uuidString,
             timestamp: Date(),
             logLevel: level.rawValue,
             module: moduleName,

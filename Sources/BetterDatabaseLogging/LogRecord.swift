@@ -8,7 +8,10 @@
 import Foundation
 import Blackbird
 
-public struct LogRecord: BlackbirdModel {
+struct LogRecord: BlackbirdModel {
+    
+    @BlackbirdColumn
+    var id: String
     
     @BlackbirdColumn
     var timestamp: Date
