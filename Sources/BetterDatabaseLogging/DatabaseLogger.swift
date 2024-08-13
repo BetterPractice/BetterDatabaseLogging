@@ -22,6 +22,11 @@ public struct DatabaseLogger: Logger {
     public var moduleName: String?
     public var squelchLevel: LogLevel = .verbose
 
+    public init(db: Blackbird.Database, moduleName: String? = nil) {
+        self.db = db
+        self.moduleName = moduleName
+    }
+    
     public func log(level: BetterLogging.LogLevel, _ message: @autoclosure () -> String, subject: Any?) {
         guard level <= squelchLevel else {
             return
